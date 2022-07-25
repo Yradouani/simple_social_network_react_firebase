@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #413838;
+}
+
+.app-header {
+  width: 50%;
+  background-color: #252121;
+  margin: 50px auto;
+  color: #e7dfdf;
+  text-align: center;
+  box-shadow: 5px 5px 10px #353030;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  padding: 30px;
+  position: relative;
+}
+
+.app-header .header-btn {
+  background-color: transparent;
+  height: 30px;
+  display: flex;
+  position: absolute;
+  top: -30px;
+  left: 0;
+}
+
+.app-header .header-btn button {
+  border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+  color: #e7dfdf;
+  background: transparent;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.app-header .header-btn button:hover {
+  filter: brightness(80%);
+}
+
+.app-header .signup-container form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 20px auto;
+}
+
+.app-header .signup-container form input {
+  margin: 10px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+}
+
+.app-header .signup-container form .submit {
+  background-color: #d33636;
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.css.map */

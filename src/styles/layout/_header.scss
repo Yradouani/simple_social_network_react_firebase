@@ -1,0 +1,104 @@
+.app-header {
+    width: 50%;
+    background-color: $color-2;
+    margin: 50px auto;
+    color: $color-3;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgb(53, 48, 48);
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    padding: 30px;
+    position: relative;
+
+    .header-btn {
+        background-color: transparent;
+        height: 30px;
+        display: flex;
+        position: absolute;
+        top: -30px;
+        left: 0;
+
+        button {
+            border: none;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            overflow: hidden;
+            color: $color-3;
+            background: transparent;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.2s;
+
+            &:hover {
+                filter: brightness(80%);
+            }
+        }
+    }
+
+    .signup-container,
+    .login-container {
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin: 20px auto;
+
+            input {
+                margin: 10px;
+                padding: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border-radius: 10px;
+                border: none;
+            }
+
+            .submit {
+                background-color: $color-4;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    .user_infos {
+        display: flex;
+        align-items: center;
+        position: relative;
+        user-select: none;
+
+        span {
+            background: $color-4;
+            height: 30px;
+            width: 30px;
+            @include verticalCenter;
+            border-radius: 150px;
+            text-transform: uppercase;
+            box-shadow: $shadow;
+            transform: translateY(-10px);
+            padding: 5px;
+            font-size: 30px;
+        }
+
+        h4 {
+            text-transform: capitalize;
+            font-size: 2.5rem;
+            transform: translate(10px, -10px);
+            margin: 20px;
+        }
+
+        button {
+            position: absolute;
+            right: 6px;
+            top: 0;
+            background: none;
+            color: $color-4;
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    }
+
+}
