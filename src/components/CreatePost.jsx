@@ -24,13 +24,12 @@ const CreatePost = ({ userId, displayName }) => {
         message.current.value = "";
 
         console.log(data);
-    }
+    };
 
     return (
         <div className='new_post'>
             <form onSubmit={(e) => handlePost(e)}>
                 <textarea placeholder='Message...' ref={message}>
-
                 </textarea>
                 <input type="submit" value="Envoyer" />
             </form>

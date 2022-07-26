@@ -17,7 +17,7 @@
         }
 
         input[type="submit"] {
-            background-color: rgb(248, 46, 73);
+            background-color: $color-4;
             cursor: pointer;
             margin: 10px;
             padding: 15px;
@@ -161,6 +161,63 @@
                 p {
                     margin: 5px 0;
                     font-size: 0.8rem;
+                }
+            }
+        }
+
+        .comment-container {
+            h3 {
+                margin: 70px 0 20px 0;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+
+                textarea {
+                    background: rgb(255, 255, 255);
+                    border: none;
+                    font-size: 15px;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    width: 95%;
+
+                    // &::placeholder {
+                    //     position: absolute;
+                    //     margin: 10px;
+                    // }
+                }
+
+                input[type="submit"] {
+                    background-color: $color-4;
+                    cursor: pointer;
+                    padding: 10px 20px;
+                    text-align: center;
+                    border-radius: 10px;
+                    border: none;
+                    font-size: 18px;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            .one_comment_container {
+                width: 90%;
+                background: rgb(88, 87, 87);
+                padding: 15px;
+                margin: 10px auto;
+                border-radius: 10px;
+
+                h3 {
+                    margin: 0 0 15px 0;
+                    color: white;
+                }
+
+                div {
+                    color: white;
+                    font-size: 18px;
                 }
             }
         }
