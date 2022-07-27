@@ -45,6 +45,42 @@
         position: relative;
         border-left: 1px solid rgb(143, 0, 0);
 
+        .confirm_delete_modal {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            background: rgb(228, 228, 228);
+            padding: 60px;
+            transform: translate(50%, -50%);
+            border-radius: 10px;
+            width: 60%;
+
+            p {
+                color: black;
+                font-weight: bold;
+                text-align: center;
+                font-size: 25px;
+            }
+
+            .button_container {
+                display: flex;
+                margin-top: 50px;
+                justify-content: space-around;
+
+                button {
+                    background-color: rgb(238, 9, 86);
+                    cursor: pointer;
+                    padding: 10px 20px;
+                    text-align: center;
+                    border-radius: 10px;
+                    border: none;
+                    font-size: 18px;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+
         .title {
             display: flex;
             align-items: center;
@@ -86,6 +122,8 @@
             top: 20px;
             right: 12px;
 
+
+
             i {
                 margin: 0 5px;
                 border-radius: 20px;
@@ -124,13 +162,34 @@
             }
         }
 
-        textarea {
+        .edit_message {
             width: 100%;
-            margin-top: 20px;
-            margin-left: 0;
+            text-align: center;
+
+            button {
+                background-color: rgb(238, 9, 86);
+                cursor: pointer;
+                padding: 10px 20px;
+                text-align: center;
+                border-radius: 10px;
+                border: none;
+                font-size: 18px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        textarea {
+            width: 95%;
+            margin: 20px auto;
             border-radius: 10px 10px 0 10px;
-            height: 65px;
-            background: rgb(216, 216, 216);
+            height: 75px;
+            background: rgb(194, 194, 194);
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            color: rgb(0, 0, 0);
+            font-size: 18px
         }
 
         input[type="submit"] {

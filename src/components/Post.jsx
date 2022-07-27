@@ -8,6 +8,7 @@ import { deletePost, editPost } from '../actions/post.action';
 const Post = ({ post, user }) => {
     const [edit, setEdit] = useState(false);
     const [editMess, setEditMess] = useState(null);
+    const [handleModal, setHandleModal] = useState(false);
     const dispatch = useDispatch();
 
     const dateFormateur = (date) => {
@@ -41,6 +42,18 @@ const Post = ({ post, user }) => {
     console.log(post);
     return (
         <div className='post'>
+            {handleModal && (
+                <div className='confirm_delete_modal'>
+                    <p>Êtes-vous sûr de supprimer ce message ?</p>
+                    <div className='button_container'>
+                        <button onClick={
+                            () => setHandleModal(!handleModal)
+                        }>Annuler</button>
+                        <button onClick={() => handleDelete()}>Oui</button>
+
+                    </div>
+                </div>
+            )}
             <div className="post-header">
                 <div className="left-part">
                     <div className="title">
@@ -55,15 +68,19 @@ const Post = ({ post, user }) => {
                             <span onClick={() => setEdit(!edit)}>
                                 <i className="fa-solid fa-pen-to-square"></i>
                             </span>
-                            <span onClick={() => handleDelete()}>
+                            <span onClick={() =>
+                                // handleDelete()
+                                setHandleModal(!handleModal)
+                            }>
                                 <i className="fa-solid fa-trash-can"></i>
                             </span>
+
                         </div>)
                 }
             </div>
 
             {edit ? (
-                <>
+                <div className='edit_message'>
                     <textarea
                         autoFocus
                         defaultValue={editMess ? editMess : post.message}
@@ -72,7 +89,7 @@ const Post = ({ post, user }) => {
                     <button className='edit-btn' onClick={() => handleEdit()}>
                         Modifier le message
                     </button>
-                </>
+                </div>
             ) : (
                 <p>{editMess ? editMess : post.message}</p>
             )}
