@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
-import { addDoc, collection } from "firebase/firestore";
-import { db } from '../utils/firebase.config';
+import { useDispatch, useSelector } from 'react-redux';
+import { addPosts, getPosts } from '../actions/post.action';
 
 const CreatePost = ({ userId, displayName }) => {
     const message = useRef();
+    const dispatch = useDispatch();
 
     const handlePost = async (e) => {
         e.preventDefault();
@@ -15,13 +16,9 @@ const CreatePost = ({ userId, displayName }) => {
             comments: null,
             date: Date.now()
         };
-        await addDoc(
-            // L'endroit où doivent être envoyées les données
-            collection(db, "posts"),
-
-            // Contenu des données envoyées
-            data);
+        await dispatch(addPosts(data));
         message.current.value = "";
+        dispatch(getPosts());
 
         console.log(data);
     };

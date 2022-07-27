@@ -2,10 +2,13 @@ import { deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { db } from '../utils/firebase.config';
 import CommentPost from './CommentPost';
+import { useDispatch, useSelector } from 'react-redux';
+import { deletePost, editPost } from '../actions/post.action';
 
 const Post = ({ post, user }) => {
     const [edit, setEdit] = useState(false);
     const [editMess, setEditMess] = useState(null);
+    const dispatch = useDispatch();
 
     const dateFormateur = (date) => {
         let days = Math.floor((new Date() - new Date(date)) / (1000 * 3600 * 24))
@@ -23,13 +26,17 @@ const Post = ({ post, user }) => {
         setEdit(false);
 
         if (editMess) {
-            updateDoc(doc(db, "posts", post.id), { message: editMess });
+            dispatch(editPost({
+                id: post.id,
+                editMess
+            })
+            )
         }
     };
 
     const handleDelete = () => {
-        deleteDoc(doc(db, "posts", post.id))
-    }
+        dispatch(deletePost(post.id))
+    };
 
     console.log(post);
     return (
